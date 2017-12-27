@@ -1,0 +1,22 @@
+.vote-counter {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.vote-counter.positive {
+    color: green;
+}
+
+.vote-counter.negative {
+    color: red;
+}
+
+.vote-up.active {
+    color: green;
+}
+
+.vote-down.active {
+    color: red;
+}

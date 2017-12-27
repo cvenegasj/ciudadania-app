@@ -1,0 +1,31 @@
+// Import your custom theme
+@import '../../../app-theme.scss';
+
+.sub-container {
+    width: 70%;
+    max-width: 900px;
+    margin: 55px auto 0;
+}
+
+.tabs-container {
+    width: 70%;
+    max-width: 900px;
+    margin: 35px auto;
+}
+
+.example-header-image {
+    background-image: url('http://new.alliancelogistic.net/wp-content/uploads/2017/07/medium-default-avatar.png');
+    background-size: cover;
+    margin-right: 25px;
+}
+
+.example-header-image-2 {
+    background-image: url('http://jeffyurekmpp.com/wp-content/uploads/2015/05/icon-municipal-1.png');
+    background-size: cover;
+    margin-right: 25px;
+}
+
+.card-1 {
+    color: mat-contrast($mat-grey, 300);
+    background-color: mat-color($mat-grey, 300);
+}

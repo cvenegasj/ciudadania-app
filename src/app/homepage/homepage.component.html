@@ -1,0 +1,23 @@
+<div id="main-header">
+    <form id="main-form-container">
+        <mat-form-field class="main-search-input">
+            <input type="text" matInput [formControl]="mainSearch" [matAutocomplete]="auto"
+                placeholder="¿A quién deseas evaluar?">
+            <button mat-icon-button matSuffix>
+                <mat-icon class="material-icons">search</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option (onSelectionChange)="showGovernorDetail($event, item)" *ngFor="let item of filteredOptions | async" [value]="item.fullName">
+                <mat-icon class="material-icons">face</mat-icon>
+                <span>{{ item.fullName }}</span>
+            </mat-option>
+            <mat-option (onSelectionChange)="showGovernorDetail($event, item)" *ngFor="let item of INSTITUTIONS" [value]="item.name">
+                <mat-icon class="material-icons">account_balance</mat-icon>
+                <span>{{ item.name }}</span>
+            </mat-option>
+        </mat-autocomplete>
+    </form>
+</div>
+
+<router-outlet></router-outlet>

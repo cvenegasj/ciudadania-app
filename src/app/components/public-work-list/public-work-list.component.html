@@ -1,0 +1,146 @@
+<div>
+    <div class="data-container-header-1" fxLayoutAlign="start center">
+        <img src="https://image.flaticon.com/icons/png/512/288/288744.png" width="70" style="margin-right: 15px;" />
+        <h1 class="title-1">Las obras públicas mejoran tu ciudad. Tu opinión es importante.</h1>
+    </div>
+    <div fxFlexLayout="row" class="data-container-1">
+        <div>
+            <a routerLink="./nueva" mat-raised-button class="blue-button">
+                <mat-icon class="material-icons">add</mat-icon>
+                <span>Registrar nueva obra</span>
+            </a>
+        </div>
+        <div fxFlex></div>
+        <form class="example-form">
+            <mat-form-field floatLabel="never" style="width: 280px;">
+                <input matInput #filter placeholder="Filtrar por nombre...">
+            </mat-form-field>
+            <mat-select placeholder="Ordenar por" style="width: 140px;">
+                <mat-option [value]="'Más populares'">
+                    Más populares primero
+                </mat-option>
+                <mat-option [value]="'Más antiguos'">
+                    Más antiguos primero
+                </mat-option>
+                <mat-option [value]="'Más nuevos'">
+                    Más nuevos primero
+                </mat-option>
+            </mat-select>
+        </form>
+    </div>
+
+    <div>
+        <mat-table #table [dataSource]="dataSource" style="margin-top: -35px;">
+            <!-- Stats -->
+            <ng-container matColumnDef="stats">
+                <mat-header-cell *matHeaderCellDef fxFlex="200px"></mat-header-cell>
+                <mat-cell *matCellDef="let publicWork" fxFlex="200px" fxLayout="row">
+                    <div class="pw-indicator">
+                        <app-vote-buttons [idItem]='item?.idItem' [idUser]='user?.idUser'></app-vote-buttons>
+                    </div>
+                    <div class="pw-indicator offset">
+                        <div class="pw-indicator-number">50</div>
+                        <div class="pw-indicator-text">comentarios</div>
+                    </div>
+                    <div class="pw-indicator offset">
+                        <div class="pw-indicator-number">902</div>
+                        <div class="pw-indicator-text">vistas</div>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Description -->
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef fxFlex></mat-header-cell>
+                <mat-cell *matCellDef="let publicWork" fxFlex class="custom-table-cell">
+                    <h2 class="cell-public-work-title">
+                        <a [routerLink]="['../obras', publicWork.idPublicWork]"> {{publicWork.title}} </a>
+                    </h2>
+                    <div class="cell-public-work-description">
+                        {{publicWork.description}}
+                    </div>
+                    <div class="cell-public-work-published">
+                        publicado el 20 agosto
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="['stats', 'description']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['stats', 'description']"></mat-row>
+        </mat-table>
+    </div>
+
+
+    <!--
+    <div fxLayout="column" fxLayoutGap="10px" class="data-container-1">
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Remodelación de Plaza de Armas de Trujillo</a>
+            </mat-card-title>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button class="green-button" (click)="addPositiveCounter1($event)">
+                    <mat-icon class="material-icons">arrow_drop_up</mat-icon>
+                    <span>{{ positiveCounter1 }}</span>
+                </button>
+                <button mat-raised-button class="red-button" (click)="addNegativeCounter1($event)">
+                    <mat-icon class="material-icons">arrow_drop_down</mat-icon>
+                    <span>{{ negativeCounter1 }}</span>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Construcción de parque de diversiones infantil en Av. Larco</a>
+            </mat-card-title>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button class="green-button" (click)="addPositiveCounter2($event)">
+                    <mat-icon class="material-icons">arrow_drop_up</mat-icon>
+                    <span>{{ positiveCounter2 }}</span>
+                </button>
+                <button mat-raised-button class="red-button" (click)="addNegativeCounter2($event)">
+                    <mat-icon class="material-icons">arrow_drop_down</mat-icon>
+                    <span>{{ negativeCounter2 }}</span>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Demolición de casas coloniales en el centro de Trujillo</a>
+            </mat-card-title>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button class="green-button">
+                    <mat-icon class="material-icons">arrow_drop_up</mat-icon>
+                    <span>{{ positiveCounter3 }}</span>
+                </button>
+                <button mat-raised-button class="red-button">
+                    <mat-icon class="material-icons">arrow_drop_down</mat-icon>
+                    <span>{{ negativeCounter3 }}</span>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-paginator [length]="50"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25]"
+            (page)="pageEvent = $event">
+        </mat-paginator>
+    </div> -->
+
+</div>

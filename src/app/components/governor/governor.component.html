@@ -1,0 +1,43 @@
+<div class="sub-container">
+    <mat-card fxLayout="row" class="card-1">
+        <div mat-card-avatar class="example-header-image"></div>
+        <div fxFlex>
+            <mat-card-title>
+                Elidio Espinoza
+            </mat-card-title>
+            <mat-card-subtitle>
+                Gobernador Provincial de Trujillo 2015-2018
+            </mat-card-subtitle>
+        </div>
+    </mat-card>
+
+    <mat-card fxLayout="row" style="margin-top: 20px;" class="card-1">
+            <div mat-card-avatar class="example-header-image-2"></div>
+            <div fxFlex>
+                <mat-card-title>
+                    Municipalidad Provincial de Trujillo
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <mat-icon class="material-icons">place</mat-icon>
+                    <span>Av. España 566, Trujillo, Perú</span>
+                </mat-card-subtitle>
+            </div>
+        </mat-card>
+</div>
+
+<div class="tabs-container">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link
+            *ngFor="let link of routeLinks"
+            [routerLink]="link.path"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive">
+            {{ link.label }}
+        </a>
+    </nav>
+
+    <div [@routerAnimation]="getRouteAnimation(route)">
+        <router-outlet #route="outlet"></router-outlet>
+    </div>
+</div>

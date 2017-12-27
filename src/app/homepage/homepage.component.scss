@@ -1,0 +1,21 @@
+// Import your custom theme
+@import '../../app-theme.scss';
+
+#main-header {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: mat-contrast($mat-cyan, 800);
+    background-color: mat-color($mat-cyan, 800);
+}
+
+#main-form-container {
+    width: 60%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-search-input {
+    margin: auto; 
+    width: 100%;
+    font-size: 30px !important;
+}

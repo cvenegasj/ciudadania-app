@@ -1,0 +1,92 @@
+<div>
+    <div class="data-container-header-1" fxLayoutAlign="start center">
+        <img src="https://www.medical-interviews.co.uk/images/icons/questions/question_orange.png" width="70" style="margin-right: 15px;" />
+        <h1 class="title-1">Tus quejas ayudan a las autoridades a tomar acción.</h1>
+    </div>
+    <div fxFlexLayout="row" class="data-container-1">
+        <div>
+            <button mat-raised-button class="orange-button">
+                <mat-icon class="material-icons">add</mat-icon>
+                <span>Registra tu opinión o queja</span>
+            </button>
+        </div>
+        <div fxFlex></div>
+        <form class="example-form">
+            <mat-form-field floatLabel="never" style="width: 280px;">
+                <input matInput placeholder="Filtrar por título...">
+            </mat-form-field>
+            <mat-select placeholder="Ordenar por" style="width: 140px;">
+                <mat-option [value]="'Más antiguos'">
+                    Más antiguos primero
+                </mat-option>
+                <mat-option [value]="'Más nuevos'">
+                    Más nuevos primero
+                </mat-option>
+            </mat-select>
+        </form>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px" class="data-container-1">
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Acoso sexual en la Av. Perú</a>
+            </mat-card-title>
+            <mat-card-subtitle>
+                5 de noviembre del 2017
+            </mat-card-subtitle>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Calles sucias en Víctor Larco</a>
+            </mat-card-title>
+            <mat-card-subtitle>
+                20 de noviembre del 2017
+            </mat-card-subtitle>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Mala atención en municipalidad de Lima</a>
+            </mat-card-title>
+            <mat-card-subtitle>
+                14 de noviembre del 2017
+            </mat-card-subtitle>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card [class.mat-elevation-z2]="true">
+            <mat-card-title>
+                <a routerLink="/obras" class="title-2">Falta de luz en Urb. California</a>
+            </mat-card-title>
+            <mat-card-subtitle>
+                15 de noviembre del 2017
+            </mat-card-subtitle>
+            <mat-card-content>
+                    Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsum
+                    Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum 
+                    Loreem ipsum Loreem ipsum Loreem ipsum.
+            </mat-card-content>
+        </mat-card>
+
+        <mat-paginator [length]="50"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25]"
+            (page)="pageEvent = $event">
+        </mat-paginator>
+    </div>
+
+</div>

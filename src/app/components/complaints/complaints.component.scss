@@ -1,0 +1,22 @@
+// Import your custom theme
+@import '../../../app-theme.scss';
+
+.data-container-header-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*color: mat-contrast($mat-light-blue, 100);
+    background-color: mat-color($mat-light-blue, 100);*/
+}
+
+.data-container-1 {
+}
+
+.blue-button {
+    color: mat-contrast($mat-light-blue, 400);
+    background-color: mat-color($mat-light-blue, 400);
+}
+  
+.orange-button {
+    color: mat-contrast($mat-orange, 400);
+    background-color: mat-color($mat-orange, 400);
+}

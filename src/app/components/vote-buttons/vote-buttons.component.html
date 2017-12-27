@@ -1,0 +1,16 @@
+<div class="">
+  <button mat-icon-button>
+    <mat-icon class="material-icons vote-up" 
+      (click)="upVote()"
+      [ngClass]="{'active': userVote > 0}">arrow_upward</mat-icon>
+  </button>
+
+  <div class="vote-counter" [ngClass]="{'positive': voteCount > 0,
+      'negative': voteCount < 0}">{{voteCount}}</div>
+
+  <button mat-icon-button>
+    <mat-icon class="material-icons vote-down" 
+      (click)="downVote()"
+      [ngClass]="{'active': userVote < 0}">arrow_downward</mat-icon>
+  </button>
+</div>

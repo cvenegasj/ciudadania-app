@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Roboto:500,400,300";
+
+html, body {
+    display: flex;
+    flex-direction: column;
+  
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+}
+  
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+  
+.uppercase {
+  text-transform: uppercase;
+}
+
+.centered {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.bolder {
+  font-weight: 600;
+}
+
+.italicized {
+  font-style: italic;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+a:hover {
+
+}
+
+/************************/
+
+.title-1 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 300;
+}
+
+.title-2 {
+  color: #00838F;
+}

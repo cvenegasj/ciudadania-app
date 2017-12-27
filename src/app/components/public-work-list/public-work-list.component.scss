@@ -1,0 +1,85 @@
+// Import your custom theme
+@import '../../../app-theme.scss';
+
+.data-container-header-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*color: mat-contrast($mat-light-blue, 100);
+    background-color: mat-color($mat-light-blue, 100);*/
+}
+
+.data-container-1 {
+}
+
+.custom-table-cell {
+    padding: 15px 10px;
+}
+
+.pw-indicator {
+    display: inline-block;
+    padding: 5px;
+}
+
+.pw-indicator.offset {
+    margin-top: 40px;
+}
+
+.pw-indicator-number {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.pw-indicator-text {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cell-public-work-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.cell-public-work-title a {
+    color: mat-color($mat-light-blue, 700);
+}
+
+.cell-public-work-title a:hover {
+    color: mat-color($mat-light-blue, 500);
+}
+
+.cell-public-work-description {
+    margin-bottom: 10px;
+}
+
+.cell-public-work-published {
+    color: mat-color($mat-grey, 500);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+.blue-button {
+    color: mat-contrast($mat-blue, 400);
+    background-color: mat-color($mat-blue, 400);
+}
+  
+.orange-button {
+    color: mat-contrast($mat-orange, 400);
+    background-color: mat-color($mat-orange, 400);
+}
+
+.green-button {
+    color: mat-contrast($mat-green, 400);
+    background-color: mat-color($mat-green, 400);
+}
+
+.red-button {
+    color: mat-contrast($mat-red, 400);
+    background-color: mat-color($mat-red, 400);
+}
+
