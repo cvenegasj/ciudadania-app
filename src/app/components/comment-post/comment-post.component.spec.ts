@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewPublicWorkComponent } from './new-public-work.component';
+import { CommentPostComponent } from './comment-post.component';
 
-describe('NewPublicWorkComponent', () => {
-  let component: NewPublicWorkComponent;
-  let fixture: ComponentFixture<NewPublicWorkComponent>;
+describe('CommentPostComponent', () => {
+  let component: CommentPostComponent;
+  let fixture: ComponentFixture<CommentPostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewPublicWorkComponent ]
+      declarations: [ CommentPostComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewPublicWorkComponent);
+    fixture = TestBed.createComponent(CommentPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

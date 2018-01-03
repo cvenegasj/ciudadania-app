@@ -1,6 +1,6 @@
 export class PublicWork {
     idPublicWork: number;
-    title: string;
+    name: string;
     description: string;
     positiveScore: number;
     negativeScore: number;
@@ -9,5 +9,7 @@ export class PublicWork {
     photo?: string;
     creationDateTime?: string;
 
-    constructor() {}
+    constructor() {
+        this.description = '';
+    }
 }

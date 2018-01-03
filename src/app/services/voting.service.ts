@@ -9,13 +9,20 @@ export class VotingService {
 
     constructor(private http: HttpClient) {}
 
-    getItemVotes(idItem: number): Observable<any[]> {
+    getPublicWorkVotes(idPublicWork: number): Observable<any[]> {
         return this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts');
     }
 
-    updateUserVote(idItem: number, idUser: number, vote: number): Observable<any> {
+    getGovernorVotes(idGovernor: number): Observable<any[]> {
+        return this.http.get<any[]>('');
+    }
+
+    updatePublicWorkUserVote(idItem: number, idUser: number, vote: number): Observable<any> {
         return this.http.post('url', JSON.stringify({}));
     }
 
+    updateGovernorUserVote(idGovernor: number, idUser: number, vote: number): Observable<any> {
+        return this.http.post('url', JSON.stringify({}));
+    }
 
 }

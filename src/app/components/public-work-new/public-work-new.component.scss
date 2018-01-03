@@ -1,0 +1,42 @@
+// Import your custom theme
+@import '../../../app-theme.scss';
+
+.top-action {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: mat-color($app-accent, 700);
+}
+
+.top-action .action {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.form-title {
+    font-size: 30px;
+    line-height: 37px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.new-form {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width-field {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    margin-top: 15px;
+}
+
+.button-row button {
+    margin-left: 10px;
+}

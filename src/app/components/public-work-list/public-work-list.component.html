@@ -36,7 +36,7 @@
                 <mat-header-cell *matHeaderCellDef fxFlex="200px"></mat-header-cell>
                 <mat-cell *matCellDef="let publicWork" fxFlex="200px" fxLayout="row">
                     <div class="pw-indicator">
-                        <app-vote-buttons [idItem]='item?.idItem' [idUser]='user?.idUser'></app-vote-buttons>
+                        <app-vote-buttons [idPublicWork]='publicWork.idPublicWork' [idUser]='user?.idUser'></app-vote-buttons>
                     </div>
                     <div class="pw-indicator offset">
                         <div class="pw-indicator-number">50</div>
@@ -53,8 +53,8 @@
             <ng-container matColumnDef="description">
                 <mat-header-cell *matHeaderCellDef fxFlex></mat-header-cell>
                 <mat-cell *matCellDef="let publicWork" fxFlex class="custom-table-cell">
-                    <h2 class="cell-public-work-title">
-                        <a [routerLink]="['../obras', publicWork.idPublicWork]"> {{publicWork.title}} </a>
+                    <h2 class="cell-public-work-name">
+                        <a [routerLink]="['../obras', publicWork.idPublicWork]"> {{publicWork.name}} </a>
                     </h2>
                     <div class="cell-public-work-description">
                         {{publicWork.description}}

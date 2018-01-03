@@ -66,13 +66,13 @@ export class PublicWorkListComponent implements OnInit {
 }
 
 const data: PublicWork[] = [
-  { idPublicWork: 1, title: 'Remodelación de Plaza de Armas de Trujillo',
+  { idPublicWork: 1, name: 'Remodelación de Plaza de Armas de Trujillo',
   description: 'Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum m ipsum.',
   positiveScore: 200, negativeScore: 650 },
-  { idPublicWork: 2, title: 'Construcción de parque de diversiones infantil en Av. Larco',
+  { idPublicWork: 2, name: 'Construcción de parque de diversiones infantil en Av. Larco',
   description: 'Loreem ipsumLoreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum Loreem ipsum Loreem ipsum Loreem ipsumLoreem ipsum Loreem ipsumLoreem ipsum m ipsum.',
   positiveScore: 400, negativeScore: 760 },
-  { idPublicWork: 2, title: 'Demolición de casas coloniales en el centro de Trujillo',
+  { idPublicWork: 3, name: 'Demolición de casas coloniales en el centro de Trujillo',
   description: 'Loreem ipsumLoreem ipsumLoreem ipsum.',
   positiveScore: 300, negativeScore: 1040 }
 ];
@@ -95,7 +95,7 @@ export class TableDataSource extends DataSource<any> {
 
     return Observable.merge(...displayDataChanges).map(() => {
       return data.slice().filter((item: PublicWork) => {
-        let searchStr = (item.title).toLowerCase();
+        let searchStr = (item.name).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
     });

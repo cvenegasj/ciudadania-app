@@ -1,6 +1,6 @@
 <div class="sub-container">
     <mat-card fxLayout="row" class="card-1">
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="governor-image"></div>
         <div fxFlex>
             <mat-card-title>
                 Elidio Espinoza
@@ -9,10 +9,13 @@
                 Gobernador Provincial de Trujillo 2015-2018
             </mat-card-subtitle>
         </div>
+        <div style="margin-right: 50px;">
+            <app-vote-buttons [idGovernor]='5' [idUser]='user?.idUser'></app-vote-buttons>
+        </div>
     </mat-card>
 
     <mat-card fxLayout="row" style="margin-top: 20px;" class="card-1">
-            <div mat-card-avatar class="example-header-image-2"></div>
+            <div mat-card-avatar class="institution-image"></div>
             <div fxFlex>
                 <mat-card-title>
                     Municipalidad Provincial de Trujillo
@@ -36,8 +39,7 @@
             {{ link.label }}
         </a>
     </nav>
+    
+    <router-outlet></router-outlet>
 
-    <div [@routerAnimation]="getRouteAnimation(route)">
-        <router-outlet #route="outlet"></router-outlet>
-    </div>
 </div>

@@ -1,16 +1,32 @@
-<div class="">
-  <button mat-icon-button>
-    <mat-icon class="material-icons vote-up" 
-      (click)="upVote()"
+<div class="vote-component">
+  <button mat-icon-button (click)="upVotePublicWork()" *ngIf="idPublicWork">
+    <mat-icon class="material-icons vote-up"
+      matTooltip="43"
+      matTooltipPosition="left"
+      [ngClass]="{'active': userVote > 0}">arrow_upward</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="upVoteGovernor()" *ngIf="idGovernor">
+    <mat-icon class="material-icons vote-up"
+      matTooltip="10"
+      matTooltipPosition="left"
       [ngClass]="{'active': userVote > 0}">arrow_upward</mat-icon>
   </button>
 
   <div class="vote-counter" [ngClass]="{'positive': voteCount > 0,
       'negative': voteCount < 0}">{{voteCount}}</div>
 
-  <button mat-icon-button>
-    <mat-icon class="material-icons vote-down" 
-      (click)="downVote()"
+  <button mat-icon-button (click)="downVotePublicWork()" *ngIf="idPublicWork">
+    <mat-icon class="material-icons vote-down"
+      matTooltip="1560"
+      matTooltipPosition="left"
+      [ngClass]="{'active': userVote < 0}">arrow_downward</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="downVoteGovernor()" *ngIf="idGovernor">
+    <mat-icon class="material-icons vote-down"
+      matTooltip="300"
+      matTooltipPosition="left"
       [ngClass]="{'active': userVote < 0}">arrow_downward</mat-icon>
   </button>
 </div>

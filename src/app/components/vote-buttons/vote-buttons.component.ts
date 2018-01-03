@@ -9,7 +9,8 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class VoteButtonsComponent implements OnInit, OnDestroy {
   @Input() idUser: number;
-  @Input() idItem: number;
+  @Input() idPublicWork: number;
+  @Input() idGovernor: number;
   voteCount = 0;
   userVote = 0;
   subscription: Subscription;
@@ -19,7 +20,7 @@ export class VoteButtonsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.subscription = this.votingService.getItemVotes(this.idItem)
+    this.subscription = this.votingService.getPublicWorkVotes(this.idPublicWork)
       .subscribe(votes => {
         if (this.idUser) { this.userVote = votes[this.idUser]; }
         // sum of votes
@@ -30,14 +31,26 @@ export class VoteButtonsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  upVote() {
+  upVotePublicWork() {
+    console.log('idPublicWork: ' + this.idPublicWork);
     let vote = this.userVote === 1 ? 0 : 1;
-    this.votingService.updateUserVote(this.idItem, this.idUser, vote);
+    this.votingService.updatePublicWorkUserVote(this.idPublicWork, this.idUser, vote);
   }
 
-  downVote() {
+  downVotePublicWork() {
     let vote = this.userVote === -1 ? 0 : -1;
-    this.votingService.updateUserVote(this.idItem, this.idUser, vote);
+    this.votingService.updatePublicWorkUserVote(this.idPublicWork, this.idUser, vote);
+  }
+
+  upVoteGovernor() {
+    console.log('idGovernor: ' + this.idGovernor);
+    let vote = this.userVote === 1 ? 0 : 1;
+    this.votingService.updateGovernorUserVote(this.idGovernor, this.idUser, vote);
+  }
+
+  downVoteGovernor() {
+    let vote = this.userVote === -1 ? 0 : -1;
+    this.votingService.updateGovernorUserVote(this.idGovernor, this.idUser, vote);
   }
 
 }

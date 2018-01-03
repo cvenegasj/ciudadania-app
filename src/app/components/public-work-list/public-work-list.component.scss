@@ -38,17 +38,17 @@
     text-align: center;
 }
 
-.cell-public-work-title {
+.cell-public-work-name {
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-.cell-public-work-title a {
+.cell-public-work-name a {
     color: mat-color($mat-light-blue, 700);
 }
 
-.cell-public-work-title a:hover {
+.cell-public-work-name a:hover {
     color: mat-color($mat-light-blue, 500);
 }
 

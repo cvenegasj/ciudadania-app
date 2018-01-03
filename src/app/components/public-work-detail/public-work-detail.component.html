@@ -1,3 +1,63 @@
-<p>
-  public-work-detail works!
-</p>
+
+<div class="top-action">
+  <a routerLink="../" class="action">
+    <mat-icon class="material-icons">keyboard_arrow_left</mat-icon>
+    <span>Regresar</span>
+  </a>
+</div>
+
+<div fxLayout="row" style="margin-top: 50px;">
+  <div style="margin-right: 20px;">
+      <app-vote-buttons [idPublicWork]='publicWork.idPublicWork' [idUser]='user?.idUser'></app-vote-buttons>
+  </div>
+
+  <div fxFlex>
+    <h1 class="main-title"> {{publicWork.name}} </h1>
+
+    <div>
+      {{publicWork.description}}
+    </div>
+
+    <div class="published-info">
+        Publicado el 20 ago. 2017
+    </div>
+
+    <div class="bottom-actions border-top">
+      <div>
+        <div class="question">¿Qué te parece esta obra pública?</div>
+        <p class="info">Con tu voto podemos estimar el nivel de aceptación de tus gobernantes.</p>
+      </div>
+
+      <div fxLayout="row">
+        <div fxFlex>
+          <app-vote-buttons [idPublicWork]='publicWork.idPublicWork' [idUser]='user?.idUser'></app-vote-buttons>
+        </div>
+        <div fxFlexAlign="end">
+            <a routerLink="." mat-button>
+              <mat-icon class="material-icons">share</mat-icon>
+              Compartir
+            </a>
+            <a routerLink="." mat-button>
+              Modificar
+            </a>
+            <a routerLink="." mat-button>
+              Eliminar
+            </a>
+            <a routerLink="." mat-button>
+              Reportar
+            </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comments-section border-top">
+  <h2 class="title">Comentarios</h2>
+
+  <div fxLayout="column" fxLayoutGap="45px">
+    <app-comment-post [user]="user" [content]="content" [creationDateTime]="creationDateTime"></app-comment-post>
+    <app-comment-post [user]="user" [content]="content" [creationDateTime]="creationDateTime"></app-comment-post>
+    <app-comment-post [user]="user" [content]="content" [creationDateTime]="creationDateTime"></app-comment-post>
+  </div>
+</div>

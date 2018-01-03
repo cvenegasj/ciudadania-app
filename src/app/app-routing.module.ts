@@ -4,9 +4,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { GovernorComponent } from './components/governor/governor.component';
 import { PublicWorkListComponent } from './components/public-work-list/public-work-list.component';
-import { ComplaintsComponent } from './components/complaints/complaints.component';
+import { ComplaintListComponent } from './components/complaint-list/complaint-list.component';
 import { PublicWorkDetailComponent } from './components/public-work-detail/public-work-detail.component';
-import { NewPublicWorkComponent } from './components/new-public-work/new-public-work.component';
+import { PublicWorkNewComponent } from './components/public-work-new/public-work-new.component';
 
 
 const routes: Routes = [
@@ -17,9 +17,9 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'obras', pathMatch: 'full' },
           { path: 'obras', component: PublicWorkListComponent },
-          { path: 'obras/nueva', component: NewPublicWorkComponent, data: { animation: 'new' } },
+          { path: 'obras/nueva', component: PublicWorkNewComponent },
           { path: 'obras/:idPublicWork', component: PublicWorkDetailComponent },
-          { path: 'quejas', component: ComplaintsComponent }
+          { path: 'quejas', component: ComplaintListComponent }
         ]
       }
     ]

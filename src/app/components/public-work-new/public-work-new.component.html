@@ -1,0 +1,34 @@
+<div class="top-action">
+  <a routerLink="../" class="action">
+    <mat-icon class="material-icons">keyboard_arrow_left</mat-icon>
+    <span>Regresar</span>
+  </a>
+</div>
+
+<h1 class="form-title">Nueva obra</h1>
+
+<form #form="ngForm" (ngSubmit)="savePublicWork()" class="new-form">
+
+  <mat-form-field class="full-width-field" style="margin-bottom: 30px;">
+    <input type="text" matInput placeholder="Nombre de la obra" required 
+      [(ngModel)]="publicWork.name" name="name" />
+  </mat-form-field>
+
+  <!--
+  <mat-form-field class="full-width-field">
+    <textarea matInput placeholder="Descripción" matTextareaAutosize matAutosizeMinRows="5"
+      matAutosizeMaxRows="10" required
+      [(ngModel)]="publicWork.description" name="description"></textarea>
+  </mat-form-field> 
+  -->
+
+  <textarea [froalaEditor]="options" [(froalaModel)]="publicWork.description"></textarea>
+
+  <div class="border-top" style="margin-top: 20px;" [froalaView]="publicWork.description"></div>
+
+  <div class="button-row">
+    <a routerLink="../" mat-button>Cancelar</a>
+    <button mat-raised-button color="primary">Guardar</button>
+  </div>
+  
+</form>

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-complaints',
-  templateUrl: './complaints.component.html',
-  styleUrls: [ './complaints.component.scss' ]
+  selector: 'app-complaint-list',
+  templateUrl: './complaint-list.component.html',
+  styleUrls: [ './complaint-list.component.scss' ]
 })
-export class ComplaintsComponent {
+export class ComplaintListComponent {
 
   constructor(
     private route: ActivatedRoute

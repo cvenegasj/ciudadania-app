@@ -2,7 +2,8 @@ export class User {
     idUser: number;
     email: string;
     password: string;
-    name: string;
+    fullName: string;
+    avatarURL: string;
 
     constructor() {}
 }
